@@ -1,12 +1,12 @@
 import './App.css'
 import Cards from './cards'
-import Score from './score'
+// import Score from './score'
 
 function App() {
 
   return (
     <>
-    <Score/>
+    {/* <Score/> */}
     <Cards/>
     </>
   )

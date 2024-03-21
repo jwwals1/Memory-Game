@@ -5,13 +5,14 @@ import Score from "./score";
 export default function Page() {
     const [currentScore, setCurrentScore] = useState(0)
 
-    function changeScore () {
-        setCurrentScore(previous => previous + 1)
+    const handleCurrentScore = () => {
+        const newScore = currentScore + 1
+        setCurrentScore(newScore)
     }
     return (
         <>
-        <Cards/>
-        <Score currentScore={currentScore} onChange={changeScore}/>
+        <Score currentScore={currentScore}/>
+        <Cards onClick={handleCurrentScore}/>
         </>
-    )
+    ) 
 }

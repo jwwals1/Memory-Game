@@ -1,9 +1,8 @@
-// import { useState } from "react"
-
+// eslint-disable-next-line react/prop-types
 function Score ({currentScore}) {
     return (
     <>
-    <div>Score:{currentScore}</div>
+    <div>Score: <span>{currentScore}</span></div>
     </>
     )
 }

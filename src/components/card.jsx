@@ -1,7 +1,9 @@
 // eslint-disable-next-line react/prop-types
-function Card({name}) {
+function Card({name, handleClick}) {
     return (
-        <div className="card">{name}</div>
+        <div className="card" onClick={() => {
+            handleClick(name)
+        }}>{name}</div>
     )
 }
 

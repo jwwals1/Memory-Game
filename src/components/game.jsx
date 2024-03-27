@@ -17,7 +17,7 @@ function Game({onClick}) {
         return newArray
     }
 
-    const keepScore = (name) => {
+    const handleClick = (name) => {
         if (clicks.includes(name)) {
             alert("You lose");
             setClicks([])
@@ -30,7 +30,7 @@ function Game({onClick}) {
             <div key={name}>
                 <Card name={name}
                 handleClick={() => {
-                    keepScore(name)
+                    handleClick(name)
                 }}/>
             </div>
             </>

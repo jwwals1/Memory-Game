@@ -1,10 +1,12 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Card from "./card";
+import Score from "./score";
 
 // eslint-disable-next-line react/prop-types
 function Game({onClick}) {
-    const [clicks, setClicks] = useState([])
+    const [answers, setAnswers] = useState([])
     const names = ["1", "2", "3", "4", "5", "6", "7", "8"]
+    const [highScore, setHighScore] = useState(0)
 
     const randomizeArray = (array) => {
         const newArray = [];
@@ -18,11 +20,19 @@ function Game({onClick}) {
     }
 
     const handleClick = (name) => {
-        if (clicks.includes(name)) {
-            alert("You lose");
-            setClicks([])
-        } else setClicks((prev) => [...prev, name])
+        if (answers.includes(name)) {
+            alert("Game Over! You already picked");
+            setAnswers([])
+        } else setAnswers((prev) => [...prev, name])
     }
+
+    useEffect(() => {
+        if (answers.length > highScore) setHighScore(answers.length);
+        if (answers.length === names.length) {
+            alert("You win");
+            setAnswers([])
+        }
+    }, [answers])
 
     let cards = names.map((name) => {
         return (
@@ -39,6 +49,7 @@ function Game({onClick}) {
     cards = randomizeArray(cards)
     return (
         <>
+        <Score currentScore={answers.length} highScore={highScore}/>
         <div className="game" onClick={onClick}>{cards}</div>
         </>
     )

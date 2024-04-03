@@ -7,33 +7,14 @@ function Card({name, url, handleClick}) {
     useEffect(() => {
         setImageUrl(url)
     }, [url])
-//     return (
-//         <div className="card" onClick={() => {
-//             handleClick(name)
-//         }}>
-//             <img src={images} />
-//         </div>
-//     )
-// }
+
     return (
         url && (
         <div className="card" onClick={() => {
             handleClick(name)
-        }}><img src={imageUrl} alt={name}/></div>
+        }}><img src={imageUrl} alt={name}/><div className="cardName">{name}</div></div>
         )
     )
 }
-// const [imageUrl, setImageUrl] = useState("");
-// useEffect(() => {
-//     setImageUrl(url)
-// }, [url])
-// return (
-//     <div className="card">
-//         <img src={imageUrl}
-//         alt={name}
-//         onClick={() => {
-//             handleClick(name)
-//         }} />
-//     </div>
 
 export default Card

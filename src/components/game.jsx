@@ -2,13 +2,11 @@ import { useState, useEffect } from "react"
 import Card from "./card";
 import Score from "./score";
 
-const names = ["milotic", "heracross", "flygon", "starmie", "gyarados", "blastoise", "latios", "tyranitar"]
+const names = ["snorlax", "pikachu", "rattata", "pidgey", "caterpie", "squirtle", "charmander", "bulbasaur", "eevee", "scyther"]
 // eslint-disable-next-line react/prop-types
 function Game({onClick}) {
     const [images, setImages] = useState({})
     const [answers, setAnswers] = useState([])
-    // const [deckId, setDeckId] = useState(null)
-    // const [deckCards, setDeckCards] = useState(null)
     const [highScore, setHighScore] = useState(0)
 
     useEffect(() => {
@@ -21,29 +19,7 @@ function Game({onClick}) {
             });
         });
     }, [])
-    // useEffect(() => {
-    //     const fetchDeckId = async () => {
-    //         const response = await fetch(`https://deckofcardsapi.com/api/deck/new/shuffle/?count=1`);
-    //         const data = await response.json()
-    //         setDeckId(data.deck_id);
-    //     };
-    //     fetchDeckId()
-    // }, [])
 
-    // const drawCards = async (deckId) => {
-    //     await fetch(`https://deckofcardsapi.com/api/deck/${deckId}/shuffle/?count=8`)
-    //     .then((response) => response.json())
-    //     .then((response) => {
-    //         setDeckCards(response.deckCards)
-    //     })
-    //     .catch((error) => console.error(error))
-    // }
-
-    // useEffect(() => {
-    //     if (deckId !== null && deckId !== undefined) {
-    //         drawCards(deckId, 8)
-    //     }
-    // }, [deckId])
 
 
     const randomizeArray = (array) => {
@@ -75,8 +51,9 @@ function Game({onClick}) {
     let cards = names.map((pokemon) => {
         return (
             <>
-            <div key={pokemon}>
+            <div>
                 <Card name={pokemon}
+                key={pokemon.id}
                 url={images[pokemon]}
                 handleClick={() => {
                     handleClick(pokemon)

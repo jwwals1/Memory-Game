@@ -1,10 +1,76 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    display: grid;
+    background: linear-gradient(to top, #1d57a2 0%, #82afd2 100%);
+}
+
+.intro {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+}
+.game {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr  1fr 1fr 1fr;
+    margin-left: 10%;
+    margin-right: 10%;
+    /* padding-bottom: 400px; */
+} 
+
+.scoreboard {
+    display: flex;
+    justify-content: center;
+}
+
+.score {
+    margin-right: 10px
+}
+
+
 .card {
-    width: 100px;
-    height: 100px;
+    display: grid;
+    justify-content: center;
     border: solid;
     margin: 5px;
+    background-color: white;
+    border-radius: 10px;
 }
 
 .card:hover {
-    scale: 1.1;
+    scale: 1.01;
+}
+
+.cardName{
+    display: grid;
+    justify-content: center;
+}
+
+img {
+    width: 150px;
+    /* height: 200px; */
+}
+
+
+@media screen and (max-width: 800px) {
+    .game {
+        margin: 0px;
+        display: grid;
+        grid-template: 1fr 1fr / 1fr 1fr ;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .game {
+        margin: 0px;
+        display: grid;
+        grid-template: 1fr  / 1fr  ;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
 }

@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 
 .page {
@@ -11,14 +12,57 @@ body {
 .intro {
     display: grid;
     justify-content: center;
-    justify-items: center;
+    justify-items: center; 
 }
+/* 
+.title {
+    animation: typing 0.9s steps(60, end), blink-caret 0.75s step-end infinite;
+    overflow: hidden; 
+    margin: 0 auto; 
+} */
+
+.rulesText {
+    animation: typing 0.9s steps(60, end), blink-caret 0.75s step-end infinite;
+    overflow: hidden; 
+    margin: 0 auto; 
+}
+
+
+@keyframes appear {
+    0% {
+      visibility: hidden;
+    }
+    100% {
+      visibility: hidden;
+    }
+  }
+
+  @keyframes typing {
+    from {
+      white-space: nowrap;
+      width: 0;
+    }
+  
+    to {
+      white-space: nowrap;
+      width: 100%;
+    }
+  }
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: black;
+    }
+  }
 .game {
     display: grid;
     grid-template: 1fr 1fr / 1fr 1fr  1fr 1fr 1fr;
     margin-left: 10%;
     margin-right: 10%;
-    /* padding-bottom: 400px; */
+    padding-bottom: 400px;
 } 
 
 .scoreboard {
@@ -38,10 +82,13 @@ body {
     margin: 5px;
     background-color: white;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .card:hover {
     scale: 1.01;
+    /* transform: rotate3d(10,0,0,20deg) scaleZ(0.9); */
+    box-shadow: 2px 2px 20px black;
 }
 
 .cardName{

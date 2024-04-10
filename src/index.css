@@ -94,6 +94,7 @@ body {
 .cardName{
     display: grid;
     justify-content: center;
+    margin-bottom: 10px;
 }
 
 img {

@@ -10,9 +10,13 @@ function Card({name, url, handleClick}) {
 
     return (
         url && (
-        <div className="card" onClick={() => {
+        <div className="card">
+            <img src={imageUrl} alt={name} onClick={() => {
             handleClick(name)
-        }}><img src={imageUrl} alt={name}/><div className="cardName">{name}</div></div>
+            }}/>
+            <div className="cardName">{name}
+            </div>
+        </div>
         )
     )
 }

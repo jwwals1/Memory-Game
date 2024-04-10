@@ -4,7 +4,7 @@ import Score from "./score";
 
 const names = ["snorlax", "pikachu", "rattata", "pidgey", "caterpie", "squirtle", "charmander", "bulbasaur", "eevee", "scyther"]
 // eslint-disable-next-line react/prop-types
-function Game({onClick}) {
+function Game() {
     const [images, setImages] = useState({})
     const [answers, setAnswers] = useState([])
     const [highScore, setHighScore] = useState(0)
@@ -27,7 +27,7 @@ function Game({onClick}) {
         const arrayCopy = [...array];
 
         while (arrayCopy.length > 0) {
-            let randomIndex = Math.floor(Math.random() * 8);
+            let randomIndex = Math.floor(Math.random() * 10);
             newArray.push(arrayCopy.splice(randomIndex, 1));
         }
         return newArray
@@ -35,7 +35,7 @@ function Game({onClick}) {
 
     const handleClick = (name) => {
         if (answers.includes(name)) {
-            alert("Game Over! You already picked");
+            alert(`Game Over! You already picked ${name}`);
             setAnswers([])
         } else setAnswers((prev) => [...prev, name])
     }
@@ -51,9 +51,8 @@ function Game({onClick}) {
     let cards = names.map((pokemon) => {
         return (
             <>
-            <div>
+            <div key={pokemon}>
                 <Card name={pokemon}
-                key={pokemon.id}
                 url={images[pokemon]}
                 handleClick={() => {
                     handleClick(pokemon)
@@ -66,7 +65,7 @@ function Game({onClick}) {
     return (
         <>
         <Score currentScore={answers.length} highScore={highScore}/>
-        <div className="game" onClick={onClick}>{cards}</div>
+        <div className="game">{cards}</div>
         </>
     )
 }

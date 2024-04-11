@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, Fragment } from "react"
 import Card from "./card";
 import Score from "./score";
 
@@ -50,15 +50,15 @@ function Game() {
 
     let cards = names.map((pokemon) => {
         return (
-            <>
-            <div key={pokemon}>
+            <Fragment key={pokemon}>
+            <div>
                 <Card name={pokemon}
                 url={images[pokemon]}
                 handleClick={() => {
                     handleClick(pokemon)
                 }}/>
             </div>
-            </>
+            </Fragment>
         )
     })
     cards = randomizeArray(cards)

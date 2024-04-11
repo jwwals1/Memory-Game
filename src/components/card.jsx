@@ -10,7 +10,7 @@ function Card({name, url, handleClick}) {
 
     return (
         url && (
-        <div className="card">
+        <div className="card" key={name}>
             <img src={imageUrl} alt={name} onClick={() => {
             handleClick(name)
             }}/>

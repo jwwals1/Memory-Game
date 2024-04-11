@@ -14,49 +14,22 @@ body {
     justify-content: center;
     justify-items: center; 
 }
-/* 
+
 .title {
-    animation: typing 0.9s steps(60, end), blink-caret 0.75s step-end infinite;
+  font-size: 60px;
+  margin-bottom: 0px;
+    /* animation: typing 0.9s steps(60, end), blink-caret 0.75s step-end infinite;
     overflow: hidden; 
-    margin: 0 auto; 
-} */
+    margin: 0 auto;  */
+}
 
 .rulesText {
     animation: typing 0.9s steps(60, end), blink-caret 0.75s step-end infinite;
     overflow: hidden; 
     margin: 0 auto; 
+    margin-bottom: 5px;
 }
 
-
-@keyframes appear {
-    0% {
-      visibility: hidden;
-    }
-    100% {
-      visibility: hidden;
-    }
-  }
-
-  @keyframes typing {
-    from {
-      white-space: nowrap;
-      width: 0;
-    }
-  
-    to {
-      white-space: nowrap;
-      width: 100%;
-    }
-  }
-  @keyframes blink-caret {
-    from,
-    to {
-      border-color: transparent;
-    }
-    50% {
-      border-color: black;
-    }
-  }
 .game {
     display: grid;
     grid-template: 1fr 1fr / 1fr 1fr  1fr 1fr 1fr;
@@ -68,10 +41,12 @@ body {
 .scoreboard {
     display: flex;
     justify-content: center;
+    margin-bottom: 10px;
+    font-size: 20px;
 }
 
 .score {
-    margin-right: 10px
+    margin-right: 10px;
 }
 
 
@@ -87,7 +62,6 @@ body {
 
 .card:hover {
     scale: 1.01;
-    /* transform: rotate3d(10,0,0,20deg) scaleZ(0.9); */
     box-shadow: 2px 2px 20px black;
 }
 
@@ -99,7 +73,6 @@ body {
 
 img {
     width: 150px;
-    /* height: 200px; */
 }
 
 
@@ -121,4 +94,34 @@ img {
         margin-left: 15%;
         margin-right: 15%;
     }
+}
+
+@keyframes appear {
+  0% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes typing {
+  from {
+    white-space: nowrap;
+    width: 0;
+  }
+
+  to {
+    white-space: nowrap;
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
 }

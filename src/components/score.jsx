@@ -8,4 +8,4 @@ function Score ({currentScore, highScore}) {
     )
 }
 
-export default Score
+export default Score 
